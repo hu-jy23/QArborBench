@@ -9,8 +9,28 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ABSOLUTE_PATH = re.compile(r"(?:/mnt/|[A-Za-z]:\\\\)")
-DENY_DIRS = {"data", "artifacts", "sessions", "attempts", "ledgers", ".venv"}
+ABSOLUTE_PATH = re.compile(r"(?:/mnt/|/home/|[A-Za-z]:\\\\)")
+INTERNAL_STAGE = re.compile(
+    r"\b(?:Goal[ _-]?[A-D]|C(?:[0-9]|1[0-3])|qualification|HM1|HM2|mechanism[ _-]?smoke)\b",
+    re.IGNORECASE,
+)
+REMOVED_TASK = re.compile(
+    r"(?:MITSUI Commodity Prediction|mitsui-commodity-prediction|"
+    r"Rossmann Store Sales|rossmann-store-sales|"
+    r"Store Sales - Time Series Forecasting|store-sales-time-series-forecasting|"
+    r"Favorita Grocery Sales Forecasting|favorita-grocery-sales-forecasting)",
+    re.IGNORECASE,
+)
+DENY_DIRS = {
+    "data",
+    "artifacts",
+    "sessions",
+    "attempts",
+    "ledgers",
+    "papers",
+    "workspaces",
+    ".venv",
+}
 
 
 def main() -> int:
@@ -20,17 +40,17 @@ def main() -> int:
 
     assert registry["name"] == "QArborBench"
     assert registry["coverage"] == {
-        "registered_cells": 12,
-        "executed_cells": 9,
-        "deferred_cells": 3,
+        "registered_cells": 8,
+        "executed_cells": 8,
+        "deferred_cells": 0,
         "task_families": 5,
-        "evidence_regimes": 4,
+        "primary_evidence_regimes": 4,
     }
-    assert len(registry["cells"]) == 12
-    assert len(summary["cells"]) == 12
+    assert len(registry["cells"]) == 8
+    assert len(summary["cells"]) == 8
     assert summary["primary_outcomes"]["q_arbor_vs_flat"] == {
         "wins": 4,
-        "losses": 4,
+        "losses": 3,
         "no_result": 1,
     }
     assert protocol["admissibility"]["heterogeneous_metrics_aggregated"] is False
@@ -50,9 +70,11 @@ def main() -> int:
         if path.suffix.lower() in {".md", ".json", ".yml", ".yaml", ".cff", ".py"}:
             text = path.read_text(encoding="utf-8")
             assert not ABSOLUTE_PATH.search(text), path
+            assert not INTERNAL_STAGE.search(text), path
+            assert not REMOVED_TASK.search(text), path
 
     print("QArborBench public payload: PASS")
-    print("12 contracts; 9 executed; 3 deferred; no restricted directories or local paths")
+    print("8 contracts; 7 scored comparisons; 1 typed no-result; no restricted directories or local paths")
     return 0
 
 

@@ -16,7 +16,7 @@
 - flat: `5.699842425752`
 - q_arbor: `5.759560855632`
 
-Scores are meaningful only within this task, metric, stage and frozen role-model-policy comparison. A null score remains an explicit no-result. Deferred cells receive no score.
+Scores are meaningful only within this task, metric, stage and frozen role-model-policy comparison. A null score remains an explicit typed no-result and is never replaced by another arm's score.
 
 ## Reproduction boundary
 

@@ -34,9 +34,8 @@
   },
   "admissibility": {
     "leaked_result": "invalid_and_excluded_from_primary_comparison",
-    "missing_result": "explicit_no_result",
+    "missing_result": "explicit_typed_no_result",
     "resource_failure": "typed_failure_without_score_substitution",
-    "deferred_cell": "visible_with_zero_formal_score",
     "heterogeneous_metrics_aggregated": false,
     "post_heldout_tuning_allowed": false
   },

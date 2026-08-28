@@ -5,16 +5,16 @@
   "description": "A protocolized multi-task benchmark for quantitative research harnesses.",
   "status": "PUBLISHED_V0_1",
   "source_identities": {
-    "goal_b_registry_sha256": "ffe2b08c79cd553eb30ee3a1517225a32282686709f80150e26ee82370c35134",
-    "goal_c_summary_sha256": "d357e8dc11ff02237ae82be15a96e99d12aec68d982f4e01ef00552fe66bd948",
+    "registry_source_sha256": "ffe2b08c79cd553eb30ee3a1517225a32282686709f80150e26ee82370c35134",
+    "result_source_sha256": "d357e8dc11ff02237ae82be15a96e99d12aec68d982f4e01ef00552fe66bd948",
     "q_arbor_core_commit": "1af0714b701a1eaafde8e2d5ea76690ac674f0ce"
   },
   "coverage": {
-    "registered_cells": 12,
-    "executed_cells": 9,
-    "deferred_cells": 3,
+    "registered_cells": 8,
+    "executed_cells": 8,
+    "deferred_cells": 0,
     "task_families": 5,
-    "evidence_regimes": 4
+    "primary_evidence_regimes": 4
   },
   "task_families": [
     "ranking",
@@ -23,7 +23,7 @@
     "demand_forecasting",
     "scale_panel_forecasting"
   ],
-  "evidence_regimes": [
+  "primary_evidence_regimes": [
     "development",
     "data_oos",
     "public_validation",
@@ -84,22 +84,6 @@
       "task_card": "tasks/hull-tactical-market-prediction.md"
     },
     {
-      "cell_id": "mitsui-commodity-prediction",
-      "name": "MITSUI Commodity Prediction",
-      "task_family": "ranking",
-      "benchmark_role": "development_benchmark",
-      "capability_shape": "multi_target_quant_ranking",
-      "metric": {
-        "id": "rank_correlation_sharpe",
-        "direction": "maximize"
-      },
-      "data_oos_boundary": "final 45 labelled dates",
-      "preparation_repo_commit": "d61a1285cd3b48bba6902a7a84cb977e7aca01c0",
-      "primary_stage": "data_oos",
-      "v0_1_status": "COMPLETE_FLAT_BEST",
-      "task_card": "tasks/mitsui-commodity-prediction.md"
-    },
-    {
       "cell_id": "recruit-restaurant-visitor-forecasting",
       "name": "Recruit Restaurant Visitor Forecasting",
       "task_family": "demand_forecasting",
@@ -116,38 +100,6 @@
       "task_card": "tasks/recruit-restaurant-visitor-forecasting.md"
     },
     {
-      "cell_id": "rossmann-store-sales",
-      "name": "Rossmann Store Sales",
-      "task_family": "scale_panel_forecasting",
-      "benchmark_role": "public_validation",
-      "capability_shape": "large_panel_sales_forecasting",
-      "metric": {
-        "id": "rmspe",
-        "direction": "minimize"
-      },
-      "data_oos_boundary": "2015-06-20 through 2015-07-31",
-      "preparation_repo_commit": "ea52c7e958b63ea0f0b06d7386ec87427263a100",
-      "primary_stage": "deferred",
-      "v0_1_status": "EXPLICITLY_DEFERRED_DUE_TO_SCOPE_TIME_FUTURE_ELIGIBLE",
-      "task_card": "tasks/rossmann-store-sales.md"
-    },
-    {
-      "cell_id": "store-sales-time-series-forecasting",
-      "name": "Store Sales - Time Series Forecasting",
-      "task_family": "scale_panel_forecasting",
-      "benchmark_role": "public_validation",
-      "capability_shape": "multi_series_retail_forecasting",
-      "metric": {
-        "id": "rmsle",
-        "direction": "minimize"
-      },
-      "data_oos_boundary": "2017-08-01 through 2017-08-15",
-      "preparation_repo_commit": "c1729b212ed7e21409caa9d81594532e48405f49",
-      "primary_stage": "deferred",
-      "v0_1_status": "EXPLICITLY_DEFERRED_DUE_TO_SCOPE_TIME_FUTURE_ELIGIBLE",
-      "task_card": "tasks/store-sales-time-series-forecasting.md"
-    },
-    {
       "cell_id": "m5-forecasting-accuracy",
       "name": "M5 Forecasting - Accuracy",
       "task_family": "scale_panel_forecasting",
@@ -162,22 +114,6 @@
       "primary_stage": "development",
       "v0_1_status": "PARTIAL_Q_NO_RESULT_TOKEN_LIMIT_DATA_OOS_RESOURCE_FAILURE",
       "task_card": "tasks/m5-forecasting-accuracy.md"
-    },
-    {
-      "cell_id": "favorita-grocery-sales-forecasting",
-      "name": "Favorita Grocery Sales Forecasting",
-      "task_family": "scale_panel_forecasting",
-      "benchmark_role": "public_validation",
-      "capability_shape": "large_sparse_retail_forecasting",
-      "metric": {
-        "id": "nwrmsle",
-        "direction": "minimize"
-      },
-      "data_oos_boundary": "2017-07-31 through 2017-08-15",
-      "preparation_repo_commit": "f04efff1fe4bd0af7399a07e3f4c337d745704fc",
-      "primary_stage": "deferred",
-      "v0_1_status": "EXPLICITLY_DEFERRED_DUE_TO_SCOPE_TIME_FUTURE_ELIGIBLE",
-      "task_card": "tasks/favorita-grocery-sales-forecasting.md"
     },
     {
       "cell_id": "web-traffic-time-series-forecasting",
