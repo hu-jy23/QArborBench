@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "qarborbench-v0.1",
+  "status": "PUBLISHED",
+  "comparison_arms": {
+    "native_baseline": "Frozen task-native candidate under the same accepted primary split and evaluator.",
+    "flat_agent": "Single controller without an Idea Tree or hierarchical refinement.",
+    "q_arbor": "Coordinator/Executor harness using Q-Arbor's bounded refinement and evidence lifecycle."
+  },
+  "matching_policy": {
+    "flat_and_q_coordinator_model": "gpt-5.6-sol/high",
+    "q_executor_model": "gpt-5.6-luna/high",
+    "same_model_component_ablation_claimed": false,
+    "matched_fields": [
+      "task_contract",
+      "candidate_edit_surface",
+      "development_evaluator",
+      "query_and_dispatch_ceiling",
+      "wall_clock_policy",
+      "required_outputs"
+    ]
+  },
+  "budget_profiles": {
+    "development": {"max_queries": 8, "max_dispatches": 8, "administrative_token_ceiling": 200000},
+    "public_validation_search": {"max_queries": 10, "max_dispatches": 10, "administrative_token_ceiling": 400000},
+    "sealed": {"max_queries": 8, "max_dispatches": 8, "administrative_token_ceiling": 200000},
+    "held_out_access": {"queries_per_frozen_candidate": 1}
+  },
+  "evidence_regimes": {
+    "development": {"selection_feedback_allowed": true, "reusable": true},
+    "data_oos": {"selection_feedback_allowed": false, "candidate_must_be_frozen": true},
+    "public_validation": {"selection_feedback_allowed": false, "candidate_must_be_frozen": true},
+    "sealed_task_holdout": {"core_feedback_allowed": false, "core_must_be_frozen": true}
+  },
+  "admissibility": {
+    "leaked_result": "invalid_and_excluded_from_primary_comparison",
+    "missing_result": "explicit_no_result",
+    "resource_failure": "typed_failure_without_score_substitution",
+    "deferred_cell": "visible_with_zero_formal_score",
+    "heterogeneous_metrics_aggregated": false,
+    "post_heldout_tuning_allowed": false
+  },
+  "score_receipt_required_identity": [
+    "cell_id",
+    "comparison_arm",
+    "stage_policy",
+    "metric_and_direction",
+    "candidate_commit_and_tree",
+    "q_arbor_core_commit",
+    "adapter",
+    "runner",
+    "evaluator",
+    "data_and_split",
+    "environment",
+    "budget_ledger",
+    "result_status_and_provenance"
+  ]
+}

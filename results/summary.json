@@ -1,0 +1,454 @@
+{
+  "schema_version": "1.0",
+  "summary_id": "qarborbench-v0.1-primary-results",
+  "status": "PUBLISHED_ACCEPTED_PRIMARY_EVIDENCE",
+  "generated_from_frozen_receipts_only": true,
+  "heterogeneous_raw_metric_aggregation": false,
+  "core_commit": "1af0714b701a1eaafde8e2d5ea76690ac674f0ce",
+  "role_model_policy": {
+    "flat_and_q_coordinator": "gpt-5.6-sol/high",
+    "q_executor": "gpt-5.6-luna/high",
+    "pure_same_model_architecture_ablation_claimed": false
+  },
+  "cost_disclosure": {
+    "llm_token_meter": "per_arm_not_exposed_PARTIAL",
+    "paid_billing_receipt": "not_available",
+    "paid_spent_usd_field": 0,
+    "paid_spent_usd_interpretation": "ledger field only; does not mean provider calls had zero platform cost"
+  },
+  "primary_result_policy": "development cells use data-OOS when available; M5 uses development because data-OOS produced no score; public-validation cells use one-time validation; sealed cells use valid sealed receipts",
+  "cells": [
+    {
+      "cell_id": "bike-sharing-demand",
+      "name": "Bike Sharing Demand",
+      "role": "development_benchmark",
+      "capability_shape": "tabular_demand_regression",
+      "primary_stage": "data_oos",
+      "metric": {
+        "id": "rmsle",
+        "direction": "minimize"
+      },
+      "scores": {
+        "native": 0.32202345,
+        "flat": 0.31798259,
+        "q_arbor": 0.31222229
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": 1.2548340811825909,
+        "q_arbor_vs_native": 3.0436168546110465,
+        "q_arbor_vs_flat": 1.8115142718977149
+      },
+      "budget_profile": "C1 8-query/8-dispatch/200k-token ceiling plus one query per frozen data-OOS candidate",
+      "actual": {
+        "flat_search_queries": 8,
+        "flat_dispatches": 8,
+        "q_search_queries": 8,
+        "q_dispatches": 8,
+        "primary_queries_native_flat_q": [
+          1,
+          1,
+          1
+        ],
+        "search_wall_seconds_flat_q": 523.108613
+      },
+      "status": "COMPLETE_Q_ARBOR_BEST",
+      "task_card": "../tasks/bike-sharing-demand.md"
+    },
+    {
+      "cell_id": "mitsui-commodity-prediction",
+      "name": "MITSUI Commodity Prediction",
+      "role": "development_benchmark",
+      "capability_shape": "multi_target_quant_ranking",
+      "primary_stage": "data_oos",
+      "metric": {
+        "id": "rank_correlation_sharpe",
+        "direction": "maximize"
+      },
+      "scores": {
+        "native": -0.004011802664,
+        "flat": 0.339090144813,
+        "q_arbor": 0.023397789702
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": 8552.313665770076,
+        "q_arbor_vs_native": 683.2238437837578,
+        "q_arbor_vs_flat": -93.09983198865797
+      },
+      "relative_improvement_caveat": "Native is close to zero; raw scores and directional deltas are primary interpretation.",
+      "budget_profile": "C1 8-query/8-dispatch/200k-token ceiling plus one query per frozen data-OOS candidate",
+      "actual": {
+        "flat_search_queries": 8,
+        "flat_dispatches": 8,
+        "q_search_queries": 6,
+        "q_dispatches": 7,
+        "primary_queries_native_flat_q": [
+          1,
+          1,
+          1
+        ],
+        "search_wall_seconds_flat_q": 535.604461
+      },
+      "status": "COMPLETE_FLAT_BEST",
+      "task_card": "../tasks/mitsui-commodity-prediction.md"
+    },
+    {
+      "cell_id": "m5-forecasting-accuracy",
+      "name": "M5 Forecasting - Accuracy",
+      "role": "development_benchmark",
+      "capability_shape": "hierarchical_forecasting",
+      "primary_stage": "development",
+      "metric": {
+        "id": "wrmsse",
+        "direction": "minimize"
+      },
+      "scores": {
+        "native": 0.807400158785,
+        "flat": 0.634249709697,
+        "q_arbor": null
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": 21.445431636843125,
+        "q_arbor_vs_native": null,
+        "q_arbor_vs_flat": null
+      },
+      "budget_profile": "C1 8-query/8-dispatch/200k-token ceiling; data-OOS one-query gate attempted",
+      "actual": {
+        "flat_search_queries": 8,
+        "flat_dispatches": 8,
+        "q_search_queries": 0,
+        "q_dispatches": 0,
+        "data_oos_scores_native_flat_q": [
+          null,
+          null,
+          null
+        ],
+        "search_wall_seconds_flat_q": 373.791485
+      },
+      "status": "PARTIAL_Q_NO_RESULT_TOKEN_LIMIT_DATA_OOS_RESOURCE_FAILURE",
+      "task_card": "../tasks/m5-forecasting-accuracy.md"
+    },
+    {
+      "cell_id": "hull-tactical-market-prediction",
+      "name": "Hull Tactical Market Prediction",
+      "role": "public_validation",
+      "capability_shape": "dynamic_asset_allocation",
+      "primary_stage": "public_validation",
+      "metric": {
+        "id": "adjusted_sharpe",
+        "direction": "maximize"
+      },
+      "scores": {
+        "native": 0.745044469177,
+        "flat": 0.692757908097,
+        "q_arbor": 0.717646406317
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": -7.017911445978167,
+        "q_arbor_vs_native": -3.6773728271903936,
+        "q_arbor_vs_flat": 3.592668943811633
+      },
+      "budget_profile": "10-query/10-dispatch/400k-token development ceiling plus one validation query per frozen candidate",
+      "actual": {
+        "flat_search_queries": 7,
+        "flat_dispatches": 7,
+        "q_search_queries": 8,
+        "q_dispatches": 8,
+        "primary_queries_native_flat_q": [
+          1,
+          1,
+          1
+        ],
+        "search_wall_seconds_flat_q": 545.5174912200018
+      },
+      "status": "COMPLETE_Q_BEATS_FLAT_BOTH_BELOW_NATIVE",
+      "task_card": "../tasks/hull-tactical-market-prediction.md"
+    },
+    {
+      "cell_id": "jpx-tokyo-stock-exchange-prediction",
+      "name": "JPX Tokyo Stock Exchange Prediction",
+      "role": "public_validation",
+      "capability_shape": "cross_sectional_equity_ranking",
+      "primary_stage": "public_validation_causal_v2_flat",
+      "metric": {
+        "id": "spread_sharpe",
+        "direction": "maximize"
+      },
+      "scores": {
+        "native": 0.267662407403,
+        "flat": 0.224665972247,
+        "q_arbor": 0.243708844901
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": -16.06368095287411,
+        "q_arbor_vs_native": -8.949169490930736,
+        "q_arbor_vs_flat": 8.476082276075207
+      },
+      "budget_profile": "10-query/10-dispatch/400k-token development ceiling plus one validation query per frozen candidate",
+      "actual": {
+        "flat_search_queries": 10,
+        "flat_attempts": 10,
+        "q_search_queries": 7,
+        "q_dispatches": 8,
+        "primary_queries_native_flat_q": [
+          1,
+          1,
+          1
+        ],
+        "search_wall_seconds_flat_q": 440.7846708210054
+      },
+      "status": "COMPLETE_CAUSAL_RECONCILED_Q_BEATS_FLAT_BOTH_BELOW_NATIVE",
+      "task_card": "../tasks/jpx-tokyo-stock-exchange-prediction.md"
+    },
+    {
+      "cell_id": "recruit-restaurant-visitor-forecasting",
+      "name": "Recruit Restaurant Visitor Forecasting",
+      "role": "public_validation",
+      "capability_shape": "relational_demand_forecasting",
+      "primary_stage": "public_validation",
+      "metric": {
+        "id": "rmsle",
+        "direction": "minimize"
+      },
+      "scores": {
+        "native": 0.541021166797,
+        "flat": 0.524996786919,
+        "q_arbor": 0.540233041806
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": 2.961876699366292,
+        "q_arbor_vs_native": 0.14567359640768415,
+        "q_arbor_vs_flat": -2.902161549676442
+      },
+      "budget_profile": "10-query/10-dispatch/400k-token development ceiling plus one validation query per frozen candidate",
+      "actual": {
+        "flat_search_queries": 9,
+        "flat_dispatches": 9,
+        "q_search_queries": 9,
+        "q_dispatches": 9,
+        "primary_queries_native_flat_q": [
+          1,
+          1,
+          1
+        ],
+        "search_wall_seconds_flat_q": 189.4630845659958
+      },
+      "status": "COMPLETE_FLAT_BEST_Q_SLIGHTLY_BEATS_NATIVE",
+      "task_card": "../tasks/recruit-restaurant-visitor-forecasting.md"
+    },
+    {
+      "cell_id": "walmart-store-sales",
+      "name": "Walmart Store Sales",
+      "role": "public_validation",
+      "capability_shape": "weighted_panel_forecasting",
+      "primary_stage": "public_validation",
+      "metric": {
+        "id": "wmae",
+        "direction": "minimize"
+      },
+      "scores": {
+        "native": 1659.069139789473,
+        "flat": 1412.268490311804,
+        "q_arbor": 1389.202509712222
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": 14.875850774307489,
+        "q_arbor_vs_native": 16.26614729941246,
+        "q_arbor_vs_flat": 1.6332574689455401
+      },
+      "budget_profile": "10-query/10-dispatch/400k-token development ceiling plus one validation query per frozen candidate",
+      "actual": {
+        "flat_search_queries": 8,
+        "flat_dispatches": 8,
+        "q_search_queries": 7,
+        "q_dispatches": 7,
+        "primary_queries_native_flat_q": [
+          1,
+          1,
+          1
+        ],
+        "search_wall_seconds_flat_q": 278.2008408700021
+      },
+      "status": "COMPLETE_Q_ARBOR_BEST",
+      "task_card": "../tasks/walmart-store-sales.md"
+    },
+    {
+      "cell_id": "optiver-trading-at-the-close",
+      "name": "Optiver Trading at the Close",
+      "role": "sealed_task_holdout",
+      "sealed_axis": "quant",
+      "capability_shape": "market_microstructure_regression_with_iterative_interface",
+      "primary_stage": "sealed_causal_v2",
+      "metric": {
+        "id": "mae",
+        "direction": "minimize"
+      },
+      "scores": {
+        "native": 5.790414358003,
+        "flat": 5.699842425752,
+        "q_arbor": 5.759560855632
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": 1.5641701379421864,
+        "q_arbor_vs_native": 0.5328375564065894,
+        "q_arbor_vs_flat": -1.0477207161059603
+      },
+      "budget_profile": "8-query/8-dispatch/200k-token causal-v2 sealed ceiling",
+      "actual": {
+        "flat_queries": 8,
+        "flat_attempts": 8,
+        "q_queries": 6,
+        "q_dispatches": 6,
+        "primary_queries_native_flat_q": [
+          1,
+          8,
+          6
+        ],
+        "search_wall_seconds_flat_q": 3435.010266592959
+      },
+      "status": "COMPLETE_CAUSAL_V2_VALID_FLAT_BEST_V1_INVALID_EXCLUDED",
+      "task_card": "../tasks/optiver-trading-at-the-close.md"
+    },
+    {
+      "cell_id": "web-traffic-time-series-forecasting",
+      "name": "Web Traffic Time Series Forecasting",
+      "role": "sealed_task_holdout",
+      "sealed_axis": "forecasting_scale",
+      "capability_shape": "large_scale_multi_series_forecasting",
+      "primary_stage": "sealed_v1",
+      "metric": {
+        "id": "smape",
+        "direction": "minimize"
+      },
+      "scores": {
+        "native": 41.722702022417,
+        "flat": 38.965495815907,
+        "q_arbor": 40.604657780082
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": 6.608407588340272,
+        "q_arbor_vs_native": 2.679702387765524,
+        "q_arbor_vs_flat": -4.206701159197986
+      },
+      "budget_profile": "8-query/8-dispatch/200k-token sealed ceiling",
+      "actual": {
+        "flat_queries": 8,
+        "flat_dispatches": 8,
+        "q_queries": 7,
+        "q_dispatches": 7,
+        "primary_queries_native_flat_q": [
+          1,
+          8,
+          7
+        ],
+        "search_wall_seconds_flat_q": 356.33894666298886
+      },
+      "status": "COMPLETE_FLAT_BEST",
+      "task_card": "../tasks/web-traffic-time-series-forecasting.md"
+    },
+    {
+      "cell_id": "rossmann-store-sales",
+      "name": "Rossmann Store Sales",
+      "role": "public_validation",
+      "capability_shape": "large_panel_sales_forecasting",
+      "primary_stage": "deferred",
+      "metric": {
+        "id": "rmspe",
+        "direction": "minimize"
+      },
+      "scores": {
+        "native": null,
+        "flat": null,
+        "q_arbor": null
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": null,
+        "q_arbor_vs_native": null,
+        "q_arbor_vs_flat": null
+      },
+      "budget_profile": null,
+      "actual": {
+        "formal_queries": 0,
+        "dispatches": 0
+      },
+      "status": "EXPLICITLY_DEFERRED_DUE_TO_SCOPE_TIME_FUTURE_ELIGIBLE",
+      "task_card": "../tasks/rossmann-store-sales.md"
+    },
+    {
+      "cell_id": "store-sales-time-series-forecasting",
+      "name": "Store Sales - Time Series Forecasting",
+      "role": "public_validation",
+      "capability_shape": "multi_series_retail_forecasting",
+      "primary_stage": "deferred",
+      "metric": {
+        "id": "rmsle",
+        "direction": "minimize"
+      },
+      "scores": {
+        "native": null,
+        "flat": null,
+        "q_arbor": null
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": null,
+        "q_arbor_vs_native": null,
+        "q_arbor_vs_flat": null
+      },
+      "budget_profile": null,
+      "actual": {
+        "formal_queries": 0,
+        "dispatches": 0
+      },
+      "status": "EXPLICITLY_DEFERRED_DUE_TO_SCOPE_TIME_FUTURE_ELIGIBLE",
+      "task_card": "../tasks/store-sales-time-series-forecasting.md"
+    },
+    {
+      "cell_id": "favorita-grocery-sales-forecasting",
+      "name": "Favorita Grocery Sales Forecasting",
+      "role": "public_validation",
+      "capability_shape": "large_sparse_retail_forecasting",
+      "primary_stage": "deferred",
+      "metric": {
+        "id": "nwrmsle",
+        "direction": "minimize"
+      },
+      "scores": {
+        "native": null,
+        "flat": null,
+        "q_arbor": null
+      },
+      "relative_improvement_percent": {
+        "flat_vs_native": null,
+        "q_arbor_vs_native": null,
+        "q_arbor_vs_flat": null
+      },
+      "budget_profile": null,
+      "actual": {
+        "formal_queries": 0,
+        "dispatches": 0
+      },
+      "status": "EXPLICITLY_DEFERRED_DUE_TO_SCOPE_TIME_FUTURE_ELIGIBLE",
+      "task_card": "../tasks/favorita-grocery-sales-forecasting.md"
+    }
+  ],
+  "primary_outcomes": {
+    "executed_cells": 9,
+    "deferred_cells": 3,
+    "flat_vs_native": {
+      "wins": 7,
+      "losses": 2,
+      "no_result": 0
+    },
+    "q_arbor_vs_native": {
+      "wins": 6,
+      "losses": 2,
+      "no_result": 1
+    },
+    "q_arbor_vs_flat": {
+      "wins": 4,
+      "losses": 4,
+      "no_result": 1
+    }
+  },
+  "claim_boundary": "Results apply to the frozen core, role-model policy, budgets, task adapters and receipts listed here. They do not establish universal superiority or a pure same-model architecture ablation.",
+  "source_goal_c_summary_sha256": "d357e8dc11ff02237ae82be15a96e99d12aec68d982f4e01ef00552fe66bd948"
+}

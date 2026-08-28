@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "qarborbench-v0.1",
+  "name": "QArborBench",
+  "description": "A protocolized multi-task benchmark for quantitative research harnesses.",
+  "status": "PUBLISHED_V0_1",
+  "source_identities": {
+    "goal_b_registry_sha256": "ffe2b08c79cd553eb30ee3a1517225a32282686709f80150e26ee82370c35134",
+    "goal_c_summary_sha256": "d357e8dc11ff02237ae82be15a96e99d12aec68d982f4e01ef00552fe66bd948",
+    "q_arbor_core_commit": "1af0714b701a1eaafde8e2d5ea76690ac674f0ce"
+  },
+  "coverage": {
+    "registered_cells": 12,
+    "executed_cells": 9,
+    "deferred_cells": 3,
+    "task_families": 5,
+    "evidence_regimes": 4
+  },
+  "task_families": [
+    "ranking",
+    "dynamic_allocation",
+    "market_microstructure",
+    "demand_forecasting",
+    "scale_panel_forecasting"
+  ],
+  "evidence_regimes": [
+    "development",
+    "data_oos",
+    "public_validation",
+    "sealed_task_holdout"
+  ],
+  "comparison_arms": [
+    "native_baseline",
+    "flat_agent",
+    "q_arbor"
+  ],
+  "cells": [
+    {
+      "cell_id": "bike-sharing-demand",
+      "name": "Bike Sharing Demand",
+      "task_family": "demand_forecasting",
+      "benchmark_role": "development_benchmark",
+      "capability_shape": "tabular_demand_regression",
+      "metric": {
+        "id": "rmsle",
+        "direction": "minimize"
+      },
+      "data_oos_boundary": "2012-10 through 2012-12",
+      "preparation_repo_commit": "87a9e09d50f3aa7559eac7b621334eb924ecd56a",
+      "primary_stage": "data_oos",
+      "v0_1_status": "COMPLETE_Q_ARBOR_BEST",
+      "task_card": "tasks/bike-sharing-demand.md"
+    },
+    {
+      "cell_id": "walmart-store-sales",
+      "name": "Walmart Store Sales",
+      "task_family": "demand_forecasting",
+      "benchmark_role": "public_validation",
+      "capability_shape": "weighted_panel_forecasting",
+      "metric": {
+        "id": "wmae",
+        "direction": "minimize"
+      },
+      "data_oos_boundary": "2012-10 final four forecast weeks",
+      "preparation_repo_commit": "8f1e7fb96c54ce1b491130ab940d07a9276f0b6e",
+      "primary_stage": "public_validation",
+      "v0_1_status": "COMPLETE_Q_ARBOR_BEST",
+      "task_card": "tasks/walmart-store-sales.md"
+    },
+    {
+      "cell_id": "hull-tactical-market-prediction",
+      "name": "Hull Tactical Market Prediction",
+      "task_family": "dynamic_allocation",
+      "benchmark_role": "public_validation",
+      "capability_shape": "dynamic_asset_allocation",
+      "metric": {
+        "id": "adjusted_sharpe",
+        "direction": "maximize"
+      },
+      "data_oos_boundary": "date_id 8688 through 9047",
+      "preparation_repo_commit": "7f21cc360909927a065c9913f3476d3da8db0fca",
+      "primary_stage": "public_validation",
+      "v0_1_status": "COMPLETE_Q_BEATS_FLAT_BOTH_BELOW_NATIVE",
+      "task_card": "tasks/hull-tactical-market-prediction.md"
+    },
+    {
+      "cell_id": "mitsui-commodity-prediction",
+      "name": "MITSUI Commodity Prediction",
+      "task_family": "ranking",
+      "benchmark_role": "development_benchmark",
+      "capability_shape": "multi_target_quant_ranking",
+      "metric": {
+        "id": "rank_correlation_sharpe",
+        "direction": "maximize"
+      },
+      "data_oos_boundary": "final 45 labelled dates",
+      "preparation_repo_commit": "d61a1285cd3b48bba6902a7a84cb977e7aca01c0",
+      "primary_stage": "data_oos",
+      "v0_1_status": "COMPLETE_FLAT_BEST",
+      "task_card": "tasks/mitsui-commodity-prediction.md"
+    },
+    {
+      "cell_id": "recruit-restaurant-visitor-forecasting",
+      "name": "Recruit Restaurant Visitor Forecasting",
+      "task_family": "demand_forecasting",
+      "benchmark_role": "public_validation",
+      "capability_shape": "relational_demand_forecasting",
+      "metric": {
+        "id": "rmsle",
+        "direction": "minimize"
+      },
+      "data_oos_boundary": "2017-03-26 through 2017-04-22",
+      "preparation_repo_commit": "6a2c011d174fe8d5c802a82f600c9b3eeef85040",
+      "primary_stage": "public_validation",
+      "v0_1_status": "COMPLETE_FLAT_BEST_Q_SLIGHTLY_BEATS_NATIVE",
+      "task_card": "tasks/recruit-restaurant-visitor-forecasting.md"
+    },
+    {
+      "cell_id": "rossmann-store-sales",
+      "name": "Rossmann Store Sales",
+      "task_family": "scale_panel_forecasting",
+      "benchmark_role": "public_validation",
+      "capability_shape": "large_panel_sales_forecasting",
+      "metric": {
+        "id": "rmspe",
+        "direction": "minimize"
+      },
+      "data_oos_boundary": "2015-06-20 through 2015-07-31",
+      "preparation_repo_commit": "ea52c7e958b63ea0f0b06d7386ec87427263a100",
+      "primary_stage": "deferred",
+      "v0_1_status": "EXPLICITLY_DEFERRED_DUE_TO_SCOPE_TIME_FUTURE_ELIGIBLE",
+      "task_card": "tasks/rossmann-store-sales.md"
+    },
+    {
+      "cell_id": "store-sales-time-series-forecasting",
+      "name": "Store Sales - Time Series Forecasting",
+      "task_family": "scale_panel_forecasting",
+      "benchmark_role": "public_validation",
+      "capability_shape": "multi_series_retail_forecasting",
+      "metric": {
+        "id": "rmsle",
+        "direction": "minimize"
+      },
+      "data_oos_boundary": "2017-08-01 through 2017-08-15",
+      "preparation_repo_commit": "c1729b212ed7e21409caa9d81594532e48405f49",
+      "primary_stage": "deferred",
+      "v0_1_status": "EXPLICITLY_DEFERRED_DUE_TO_SCOPE_TIME_FUTURE_ELIGIBLE",
+      "task_card": "tasks/store-sales-time-series-forecasting.md"
+    },
+    {
+      "cell_id": "m5-forecasting-accuracy",
+      "name": "M5 Forecasting - Accuracy",
+      "task_family": "scale_panel_forecasting",
+      "benchmark_role": "development_benchmark",
+      "capability_shape": "hierarchical_forecasting",
+      "metric": {
+        "id": "wrmsse",
+        "direction": "minimize"
+      },
+      "data_oos_boundary": "d_1914 through d_1941",
+      "preparation_repo_commit": "9208c34048974416e1def7044b346823416e7e1b",
+      "primary_stage": "development",
+      "v0_1_status": "PARTIAL_Q_NO_RESULT_TOKEN_LIMIT_DATA_OOS_RESOURCE_FAILURE",
+      "task_card": "tasks/m5-forecasting-accuracy.md"
+    },
+    {
+      "cell_id": "favorita-grocery-sales-forecasting",
+      "name": "Favorita Grocery Sales Forecasting",
+      "task_family": "scale_panel_forecasting",
+      "benchmark_role": "public_validation",
+      "capability_shape": "large_sparse_retail_forecasting",
+      "metric": {
+        "id": "nwrmsle",
+        "direction": "minimize"
+      },
+      "data_oos_boundary": "2017-07-31 through 2017-08-15",
+      "preparation_repo_commit": "f04efff1fe4bd0af7399a07e3f4c337d745704fc",
+      "primary_stage": "deferred",
+      "v0_1_status": "EXPLICITLY_DEFERRED_DUE_TO_SCOPE_TIME_FUTURE_ELIGIBLE",
+      "task_card": "tasks/favorita-grocery-sales-forecasting.md"
+    },
+    {
+      "cell_id": "web-traffic-time-series-forecasting",
+      "name": "Web Traffic Time Series Forecasting",
+      "task_family": "scale_panel_forecasting",
+      "benchmark_role": "sealed_task_holdout",
+      "capability_shape": "large_scale_multi_series_forecasting",
+      "metric": {
+        "id": "smape",
+        "direction": "minimize"
+      },
+      "data_oos_boundary": "final 60 days of frozen 240-day view",
+      "preparation_repo_commit": "fcfe1d417cb5d0892358515d348754ae6d86f37e",
+      "primary_stage": "sealed_v1",
+      "v0_1_status": "COMPLETE_FLAT_BEST",
+      "task_card": "tasks/web-traffic-time-series-forecasting.md"
+    },
+    {
+      "cell_id": "optiver-trading-at-the-close",
+      "name": "Optiver Trading at the Close",
+      "task_family": "market_microstructure",
+      "benchmark_role": "sealed_task_holdout",
+      "capability_shape": "market_microstructure_regression_with_iterative_interface",
+      "metric": {
+        "id": "mae",
+        "direction": "minimize"
+      },
+      "data_oos_boundary": "date_id 461 through 480",
+      "preparation_repo_commit": "6049115c6eb4647822868193c79cd4f5607babdb",
+      "primary_stage": "sealed_causal_v2",
+      "v0_1_status": "COMPLETE_CAUSAL_V2_VALID_FLAT_BEST_V1_INVALID_EXCLUDED",
+      "task_card": "tasks/optiver-trading-at-the-close.md"
+    },
+    {
+      "cell_id": "jpx-tokyo-stock-exchange-prediction",
+      "name": "JPX Tokyo Stock Exchange Prediction",
+      "task_family": "ranking",
+      "benchmark_role": "public_validation",
+      "capability_shape": "cross_sectional_equity_ranking",
+      "metric": {
+        "id": "spread_sharpe",
+        "direction": "maximize"
+      },
+      "data_oos_boundary": "final 60 trading days",
+      "preparation_repo_commit": "1e3aa7e300e8b8182211e87ebc121db3a321a596",
+      "primary_stage": "public_validation_causal_v2_flat",
+      "v0_1_status": "COMPLETE_CAUSAL_RECONCILED_Q_BEATS_FLAT_BOTH_BELOW_NATIVE",
+      "task_card": "tasks/jpx-tokyo-stock-exchange-prediction.md"
+    }
+  ],
+  "boundary": {
+    "raw_or_derived_row_data_distributed": false,
+    "hidden_labels_distributed": false,
+    "protected_evaluator_or_selector_source_distributed": false,
+    "internal_sessions_attempts_or_ledgers_distributed": false
+  }
+}
