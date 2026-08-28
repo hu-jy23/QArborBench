@@ -14,13 +14,15 @@ INTERNAL_STAGE = re.compile(
     r"\b(?:Goal[ _-]?[A-D]|C(?:[0-9]|1[0-3])|qualification|HM1|HM2|mechanism[ _-]?smoke)\b",
     re.IGNORECASE,
 )
-REMOVED_TASK = re.compile(
-    r"(?:MITSUI Commodity Prediction|mitsui-commodity-prediction|"
-    r"Rossmann Store Sales|rossmann-store-sales|"
-    r"Store Sales - Time Series Forecasting|store-sales-time-series-forecasting|"
-    r"Favorita Grocery Sales Forecasting|favorita-grocery-sales-forecasting)",
-    re.IGNORECASE,
-)
+EXPECTED_CELL_IDS = {
+    "bike-sharing-demand",
+    "hull-tactical-market-prediction",
+    "jpx-tokyo-stock-exchange-prediction",
+    "optiver-trading-at-the-close",
+    "recruit-restaurant-visitor-forecasting",
+    "walmart-store-sales",
+    "web-traffic-time-series-forecasting",
+}
 DENY_DIRS = {
     "data",
     "artifacts",
@@ -57,7 +59,8 @@ def main() -> int:
 
     registry_ids = {cell["cell_id"] for cell in registry["cells"]}
     summary_ids = {cell["cell_id"] for cell in summary["cells"]}
-    assert registry_ids == summary_ids
+    assert registry_ids == summary_ids == EXPECTED_CELL_IDS
+    assert {path.stem for path in (ROOT / "tasks").glob("*.md")} == EXPECTED_CELL_IDS
     for cell in registry["cells"]:
         assert (ROOT / cell["task_card"]).is_file()
 
@@ -71,7 +74,6 @@ def main() -> int:
             text = path.read_text(encoding="utf-8")
             assert not ABSOLUTE_PATH.search(text), path
             assert not INTERNAL_STAGE.search(text), path
-            assert not REMOVED_TASK.search(text), path
 
     print("QArborBench public payload: PASS")
     print("7 complete contracts; no restricted directories or local paths")
