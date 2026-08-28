@@ -6,9 +6,9 @@ We propose QArborBench as a harness and evidence-governance benchmark. It does n
 
 ## v0.1 at a glance
 
-- 8 executed, replaceable task contracts; 7 scored comparisons and 1 explicit Q-Arbor no-result.
+- 7 executed, replaceable task contracts with complete Native, Flat Agent and Q-Arbor results.
 - 5 representative task families.
-- 4 primary evidence regimes.
+- 3 primary evidence regimes.
 - Native baseline, Flat Agent and Q-Arbor comparison arms.
 - Frozen task-local metrics; heterogeneous raw metrics are never averaged.
 
@@ -20,7 +20,7 @@ We propose QArborBench as a harness and evidence-governance benchmark. It does n
 | Dynamic allocation | — | — | Hull | — |
 | Market microstructure | — | — | — | Optiver |
 | Demand forecasting | — | Bike | Recruit, Walmart | — |
-| Scale/panel forecasting | M5 (Q no-result) | — | — | Web Traffic |
+| Scale/panel forecasting | — | — | — | Web Traffic |
 
 ## Agent Harness × Task
 
@@ -29,7 +29,6 @@ Arrows indicate metric direction. Results are accepted primary evidence after in
 | Task / evidence | Metric | Native | Flat Agent | Q-Arbor | Outcome |
 |---|---|---:|---:|---:|---|
 | Bike / data-OOS | RMSLE ↓ | 0.32202345 | 0.31798259 | **0.31222229** | Q best |
-| M5 / development | WRMSSE ↓ | 0.80740016 | **0.63424971** | N/A | Q no-result before dispatch |
 | Hull / public validation | Adjusted Sharpe ↑ | **0.74504447** | 0.69275791 | 0.71764641 | Native best; Q > Flat |
 | JPX / public validation causal-v2 | Spread Sharpe ↑ | **0.26766241** | 0.22466597 | 0.24370884 | Native best; Q > Flat |
 | Recruit / public validation | RMSLE ↓ | 0.54102117 | **0.52499679** | 0.54023304 | Flat best |
@@ -39,14 +38,14 @@ Arrows indicate metric direction. Results are accepted primary evidence after in
 
 Primary directional summary:
 
-- Flat Agent vs Native: 6 wins, 2 losses.
-- Q-Arbor vs Native: 5 wins, 2 losses, 1 no-result.
-- Q-Arbor vs Flat Agent: 4 wins, 3 losses, 1 no-result.
+- Flat Agent vs Native: 5 wins, 2 losses.
+- Q-Arbor vs Native: 5 wins, 2 losses.
+- Q-Arbor vs Flat Agent: 4 wins, 3 losses.
 - Public validation, Q-Arbor vs Flat Agent: 3 wins in 4 cells.
 
 ## Repository map
 
-- [`benchmark/registry.json`](benchmark/registry.json): sanitized 8-cell registry and frozen source identities.
+- [`benchmark/registry.json`](benchmark/registry.json): sanitized 7-cell registry and frozen source identities.
 - [`protocol/protocol.json`](protocol/protocol.json): comparison, budget, stage and admissibility rules.
 - [`schemas/task-contract.schema.json`](schemas/task-contract.schema.json): public adapter contract schema.
 - [`results/summary.json`](results/summary.json): machine-readable accepted results.

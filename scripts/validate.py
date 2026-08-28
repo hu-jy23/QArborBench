@@ -40,18 +40,18 @@ def main() -> int:
 
     assert registry["name"] == "QArborBench"
     assert registry["coverage"] == {
-        "registered_cells": 8,
-        "executed_cells": 8,
+        "registered_cells": 7,
+        "executed_cells": 7,
         "deferred_cells": 0,
         "task_families": 5,
-        "primary_evidence_regimes": 4,
+        "primary_evidence_regimes": 3,
     }
-    assert len(registry["cells"]) == 8
-    assert len(summary["cells"]) == 8
+    assert len(registry["cells"]) == 7
+    assert len(summary["cells"]) == 7
     assert summary["primary_outcomes"]["q_arbor_vs_flat"] == {
         "wins": 4,
         "losses": 3,
-        "no_result": 1,
+        "no_result": 0,
     }
     assert protocol["admissibility"]["heterogeneous_metrics_aggregated"] is False
 
@@ -74,7 +74,7 @@ def main() -> int:
             assert not REMOVED_TASK.search(text), path
 
     print("QArborBench public payload: PASS")
-    print("8 contracts; 7 scored comparisons; 1 typed no-result; no restricted directories or local paths")
+    print("7 complete contracts; no restricted directories or local paths")
     return 0
 
 

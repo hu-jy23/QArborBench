@@ -10,11 +10,11 @@
     "q_arbor_core_commit": "1af0714b701a1eaafde8e2d5ea76690ac674f0ce"
   },
   "coverage": {
-    "registered_cells": 8,
-    "executed_cells": 8,
+    "registered_cells": 7,
+    "executed_cells": 7,
     "deferred_cells": 0,
     "task_families": 5,
-    "primary_evidence_regimes": 4
+    "primary_evidence_regimes": 3
   },
   "task_families": [
     "ranking",
@@ -24,7 +24,6 @@
     "scale_panel_forecasting"
   ],
   "primary_evidence_regimes": [
-    "development",
     "data_oos",
     "public_validation",
     "sealed_task_holdout"
@@ -98,22 +97,6 @@
       "primary_stage": "public_validation",
       "v0_1_status": "COMPLETE_FLAT_BEST_Q_SLIGHTLY_BEATS_NATIVE",
       "task_card": "tasks/recruit-restaurant-visitor-forecasting.md"
-    },
-    {
-      "cell_id": "m5-forecasting-accuracy",
-      "name": "M5 Forecasting - Accuracy",
-      "task_family": "scale_panel_forecasting",
-      "benchmark_role": "development_benchmark",
-      "capability_shape": "hierarchical_forecasting",
-      "metric": {
-        "id": "wrmsse",
-        "direction": "minimize"
-      },
-      "data_oos_boundary": "d_1914 through d_1941",
-      "preparation_repo_commit": "9208c34048974416e1def7044b346823416e7e1b",
-      "primary_stage": "development",
-      "v0_1_status": "PARTIAL_Q_NO_RESULT_TOKEN_LIMIT_DATA_OOS_RESOURCE_FAILURE",
-      "task_card": "tasks/m5-forecasting-accuracy.md"
     },
     {
       "cell_id": "web-traffic-time-series-forecasting",

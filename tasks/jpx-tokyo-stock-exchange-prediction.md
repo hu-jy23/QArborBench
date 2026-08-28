@@ -16,7 +16,7 @@
 - flat: `0.224665972247`
 - q_arbor: `0.243708844901`
 
-Scores are meaningful only within this task, metric, stage and frozen role-model-policy comparison. A null score remains an explicit typed no-result and is never replaced by another arm's score.
+Scores are meaningful only within this task, metric, stage and frozen role-model-policy comparison.
 
 ## Reproduction boundary
 

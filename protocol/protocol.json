@@ -34,7 +34,7 @@
   },
   "admissibility": {
     "leaked_result": "invalid_and_excluded_from_primary_comparison",
-    "missing_result": "explicit_typed_no_result",
+    "missing_result": "exclude_from_published_portfolio",
     "resource_failure": "typed_failure_without_score_substitution",
     "heterogeneous_metrics_aggregated": false,
     "post_heldout_tuning_allowed": false

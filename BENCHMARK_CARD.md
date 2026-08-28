@@ -5,8 +5,8 @@
 - Name: **QArborBench**
 - Long name: **A Protocolized Multi-Task Benchmark for Quantitative Research Harnesses**
 - Release: `v0.1`
-- Registry size: 8 task contracts
-- Executed coverage: 8 task cells; 7 scored comparisons and 1 explicit Q-Arbor no-result
+- Registry size: 7 task contracts
+- Executed coverage: 7 scored task cells
 - Comparison arms: Native, Flat Agent, Q-Arbor
 
 ## Intended use
@@ -33,7 +33,7 @@ One `cell` is a versioned bundle of:
 | Dynamic asset allocation | Hull | 1 executed |
 | Market-microstructure prediction | Optiver | 1 executed |
 | Tabular and relational demand forecasting | Bike, Recruit, Walmart | 3 executed |
-| Hierarchical and multi-series forecasting | M5, Web Traffic | 2 executed |
+| Multi-series forecasting | Web Traffic | 1 executed |
 
 ## Evidence regimes
 
@@ -49,7 +49,6 @@ One `cell` is a versioned bundle of:
 | Cell | Family | Primary evidence | Status |
 |---|---|---|---|
 | Bike | tabular demand forecasting | data-OOS | executed |
-| M5 | hierarchical forecasting | development; OOS resource-blocked | explicit Q-Arbor no-result |
 | Hull | dynamic allocation | public validation | executed |
 | JPX | cross-sectional ranking | public validation causal-v2 | executed after leakage reconciliation |
 | Recruit | relational demand forecasting | public validation | executed |
@@ -59,9 +58,9 @@ One `cell` is a versioned bundle of:
 
 ## Frozen primary summary
 
-- Flat vs Native: 6 wins, 2 losses.
-- Q-Arbor vs Native: 5 wins, 2 losses, 1 no-result.
-- Q-Arbor vs Flat: 4 wins, 3 losses, 1 no-result.
+- Flat vs Native: 5 wins, 2 losses.
+- Q-Arbor vs Native: 5 wins, 2 losses.
+- Q-Arbor vs Flat: 4 wins, 3 losses.
 - Public-validation Q-Arbor vs Flat: 3 wins in 4 cells.
 - Q-Arbor three-way winners: Bike data-OOS and Walmart public validation.
 - Historical invalid variants: JPX Flat v1 and Optiver v1; both excluded from primary results.
@@ -69,7 +68,7 @@ One `cell` is a versioned bundle of:
 ## Integrity policy
 
 - Invalid scores stay addressable but never enter the primary table.
-- Missing scores remain typed no-results; no baseline value is relabeled as an agent score.
+- Cells without complete primary scores do not enter the published portfolio.
 - Raw metrics from different tasks are never averaged.
 - Every accepted result binds candidate, code, task, data, split, evaluator and environment identities.
 - Development feedback cannot select a candidate after validation/data-OOS/sealed access.

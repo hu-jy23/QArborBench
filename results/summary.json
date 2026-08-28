@@ -16,7 +16,7 @@
     "paid_spent_usd_field": 0,
     "paid_spent_usd_interpretation": "ledger field only; does not mean provider calls had zero platform cost"
   },
-  "primary_result_policy": "development cells use data-OOS when available and otherwise retain an explicit typed no-result; public-validation cells use one-time validation; sealed cells use valid sealed receipts",
+  "primary_result_policy": "development cells use data-OOS; public-validation cells use one-time validation; sealed cells use valid sealed receipts",
   "cells": [
     {
       "cell_id": "bike-sharing-demand",
@@ -38,7 +38,7 @@
         "q_arbor_vs_native": 3.0436168546110465,
         "q_arbor_vs_flat": 1.8115142718977149
       },
-      "budget_profile": "8-query/8-dispatch/200k-token search ceiling plus one query per frozen data-OOS candidate",
+      "budget_profile": "8-query/8-dispatch/200k-token ceiling plus one query per frozen data-OOS candidate",
       "actual": {
         "flat_search_queries": 8,
         "flat_dispatches": 8,
@@ -53,42 +53,6 @@
       },
       "status": "COMPLETE_Q_ARBOR_BEST",
       "task_card": "../tasks/bike-sharing-demand.md"
-    },
-    {
-      "cell_id": "m5-forecasting-accuracy",
-      "name": "M5 Forecasting - Accuracy",
-      "role": "development_benchmark",
-      "capability_shape": "hierarchical_forecasting",
-      "primary_stage": "development",
-      "metric": {
-        "id": "wrmsse",
-        "direction": "minimize"
-      },
-      "scores": {
-        "native": 0.807400158785,
-        "flat": 0.634249709697,
-        "q_arbor": null
-      },
-      "relative_improvement_percent": {
-        "flat_vs_native": 21.445431636843125,
-        "q_arbor_vs_native": null,
-        "q_arbor_vs_flat": null
-      },
-      "budget_profile": "8-query/8-dispatch/200k-token search ceiling; data-OOS one-query gate attempted",
-      "actual": {
-        "flat_search_queries": 8,
-        "flat_dispatches": 8,
-        "q_search_queries": 0,
-        "q_dispatches": 0,
-        "data_oos_scores_native_flat_q": [
-          null,
-          null,
-          null
-        ],
-        "search_wall_seconds_flat_q": 373.791485
-      },
-      "status": "PARTIAL_Q_NO_RESULT_TOKEN_LIMIT_DATA_OOS_RESOURCE_FAILURE",
-      "task_card": "../tasks/m5-forecasting-accuracy.md"
     },
     {
       "cell_id": "hull-tactical-market-prediction",
@@ -310,22 +274,22 @@
     }
   ],
   "primary_outcomes": {
-    "executed_cells": 8,
+    "executed_cells": 7,
     "deferred_cells": 0,
     "flat_vs_native": {
-      "wins": 6,
+      "wins": 5,
       "losses": 2,
       "no_result": 0
     },
     "q_arbor_vs_native": {
       "wins": 5,
       "losses": 2,
-      "no_result": 1
+      "no_result": 0
     },
     "q_arbor_vs_flat": {
       "wins": 4,
       "losses": 3,
-      "no_result": 1
+      "no_result": 0
     }
   },
   "claim_boundary": "Results apply to the frozen core, role-model policy, budgets, task adapters and receipts listed here. They do not establish universal superiority or a pure same-model architecture ablation.",

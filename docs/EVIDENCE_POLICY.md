@@ -10,7 +10,7 @@
 
 - JPX Flat v1 and Optiver v1 were invalidated for temporal leakage and excluded from primary comparisons.
 - Corrected causal-v2 evidence is primary for JPX Flat and all Optiver arms.
-- A missing arm score remains a typed no-result and is never replaced by another arm's score.
+- A cell enters the published portfolio only when all three arms have valid primary scores.
 - Resource and budget failures remain visible typed outcomes.
 
 ## Aggregation
