@@ -4,6 +4,13 @@ QArborBench is a protocolized multi-task benchmark for comparing quantitative re
 
 We propose QArborBench as a harness and evidence-governance benchmark. It does not claim complete coverage of quantitative finance or newly invented underlying datasets.
 
+<p align="center">
+  <a href="https://github.com/hu-jy23/QArborBench/releases/tag/v0.1.0"><img alt="release v0.1.0" src="https://img.shields.io/badge/release-v0.1.0-173B57"></a>
+  <img alt="7 complete tasks" src="https://img.shields.io/badge/tasks-7%20complete-237B78">
+  <img alt="5 quantitative families" src="https://img.shields.io/badge/families-5-237B78">
+  <img alt="3 evidence regimes" src="https://img.shields.io/badge/evidence%20regimes-3-B27619">
+</p>
+
 ## Original task sources
 
 QArborBench packages adapters, comparison protocol and accepted evidence around the following independently published tasks. Use the original pages for task definitions, data access, licenses and platform terms.
@@ -26,15 +33,15 @@ QArborBench packages adapters, comparison protocol and accepted evidence around 
 - Native baseline, Flat Agent and Q-Arbor comparison arms.
 - Frozen task-local metrics; heterogeneous raw metrics are never averaged.
 
-## Coverage map
+<p align="center">
+  <img src="assets/benchmark-portfolio.svg" width="100%" alt="QArborBench tasks organized by quantitative family and evidence regime">
+</p>
 
-| Task family | Data-OOS | Public validation | Sealed holdout |
-|---|---|---|---|
-| Ranking | — | JPX | — |
-| Dynamic allocation | — | Hull | — |
-| Market microstructure | — | — | Optiver |
-| Demand forecasting | Bike | Recruit, Walmart | — |
-| Scale/panel forecasting | — | — | Web Traffic |
+## Results at a glance
+
+<p align="center">
+  <img src="assets/q-vs-flat-improvement.svg" width="100%" alt="Direction-normalized Q-Arbor improvement over Flat Agent across seven tasks">
+</p>
 
 ## Agent Harness × Task
 
