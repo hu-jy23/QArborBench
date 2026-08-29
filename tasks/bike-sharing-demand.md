@@ -5,6 +5,7 @@
 - Benchmark role: `development_benchmark`
 - Capability shape: `tabular_demand_regression`
 - Metric: `rmsle` (minimize)
+- Original task source: [Bike Sharing Demand](https://www.kaggle.com/competitions/bike-sharing-demand)
 - Primary evidence stage: `data_oos`
 - v0.1 status: `COMPLETE_Q_ARBOR_BEST`
 - Preparation repository commit: `87a9e09d50f3aa7559eac7b621334eb924ecd56a`

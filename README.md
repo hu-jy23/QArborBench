@@ -4,6 +4,20 @@ QArborBench is a protocolized multi-task benchmark for comparing quantitative re
 
 We propose QArborBench as a harness and evidence-governance benchmark. It does not claim complete coverage of quantitative finance or newly invented underlying datasets.
 
+## Original task sources
+
+QArborBench packages adapters, comparison protocol and accepted evidence around the following independently published tasks. Use the original pages for task definitions, data access, licenses and platform terms.
+
+| QArborBench task | Original task page |
+|---|---|
+| Bike | [Bike Sharing Demand — Kaggle](https://www.kaggle.com/competitions/bike-sharing-demand) |
+| Hull | [Hull Tactical - Market Prediction — Kaggle](https://www.kaggle.com/competitions/hull-tactical-market-prediction) |
+| JPX | [JPX Tokyo Stock Exchange Prediction — Kaggle](https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction) |
+| Recruit | [Recruit Restaurant Visitor Forecasting — Kaggle](https://www.kaggle.com/competitions/recruit-restaurant-visitor-forecasting) |
+| Walmart | [Walmart Recruiting - Store Sales Forecasting — Kaggle](https://www.kaggle.com/competitions/walmart-recruiting-store-sales-forecasting) |
+| Optiver | [Optiver - Trading at the Close — Kaggle](https://www.kaggle.com/competitions/optiver-trading-at-the-close) |
+| Web Traffic | [Web Traffic Time Series Forecasting — Kaggle](https://www.kaggle.com/competitions/web-traffic-time-series-forecasting) |
+
 ## v0.1 at a glance
 
 - 7 executed, replaceable task contracts with complete Native, Flat Agent and Q-Arbor results.

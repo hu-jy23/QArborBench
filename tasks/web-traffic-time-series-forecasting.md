@@ -5,6 +5,7 @@
 - Benchmark role: `sealed_task_holdout`
 - Capability shape: `large_scale_multi_series_forecasting`
 - Metric: `smape` (minimize)
+- Original task source: [Web Traffic Time Series Forecasting](https://www.kaggle.com/competitions/web-traffic-time-series-forecasting)
 - Primary evidence stage: `sealed_v1`
 - v0.1 status: `COMPLETE_FLAT_BEST`
 - Preparation repository commit: `fcfe1d417cb5d0892358515d348754ae6d86f37e`

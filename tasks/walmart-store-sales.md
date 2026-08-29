@@ -5,6 +5,7 @@
 - Benchmark role: `public_validation`
 - Capability shape: `weighted_panel_forecasting`
 - Metric: `wmae` (minimize)
+- Original task source: [Walmart Store Sales](https://www.kaggle.com/competitions/walmart-recruiting-store-sales-forecasting)
 - Primary evidence stage: `public_validation`
 - v0.1 status: `COMPLETE_Q_ARBOR_BEST`
 - Preparation repository commit: `8f1e7fb96c54ce1b491130ab940d07a9276f0b6e`

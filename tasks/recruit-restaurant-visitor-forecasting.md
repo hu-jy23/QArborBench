@@ -5,6 +5,7 @@
 - Benchmark role: `public_validation`
 - Capability shape: `relational_demand_forecasting`
 - Metric: `rmsle` (minimize)
+- Original task source: [Recruit Restaurant Visitor Forecasting](https://www.kaggle.com/competitions/recruit-restaurant-visitor-forecasting)
 - Primary evidence stage: `public_validation`
 - v0.1 status: `COMPLETE_FLAT_BEST_Q_SLIGHTLY_BEATS_NATIVE`
 - Preparation repository commit: `6a2c011d174fe8d5c802a82f600c9b3eeef85040`

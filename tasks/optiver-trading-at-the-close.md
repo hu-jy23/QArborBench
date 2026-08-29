@@ -5,6 +5,7 @@
 - Benchmark role: `sealed_task_holdout`
 - Capability shape: `market_microstructure_regression_with_iterative_interface`
 - Metric: `mae` (minimize)
+- Original task source: [Optiver Trading at the Close](https://www.kaggle.com/competitions/optiver-trading-at-the-close)
 - Primary evidence stage: `sealed_causal_v2`
 - v0.1 status: `COMPLETE_CAUSAL_V2_VALID_FLAT_BEST_V1_INVALID_EXCLUDED`
 - Preparation repository commit: `6049115c6eb4647822868193c79cd4f5607babdb`

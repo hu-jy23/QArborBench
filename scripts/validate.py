@@ -62,7 +62,11 @@ def main() -> int:
     assert registry_ids == summary_ids == EXPECTED_CELL_IDS
     assert {path.stem for path in (ROOT / "tasks").glob("*.md")} == EXPECTED_CELL_IDS
     for cell in registry["cells"]:
-        assert (ROOT / cell["task_card"]).is_file()
+        source_url = cell["original_source_url"]
+        assert source_url.startswith("https://www.kaggle.com/competitions/")
+        task_card = ROOT / cell["task_card"]
+        assert task_card.is_file()
+        assert source_url in task_card.read_text(encoding="utf-8")
 
     for path in ROOT.rglob("*"):
         if path.is_dir():

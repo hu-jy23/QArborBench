@@ -5,6 +5,7 @@
 - Benchmark role: `public_validation`
 - Capability shape: `cross_sectional_equity_ranking`
 - Metric: `spread_sharpe` (maximize)
+- Original task source: [JPX Tokyo Stock Exchange Prediction](https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction)
 - Primary evidence stage: `public_validation_causal_v2_flat`
 - v0.1 status: `COMPLETE_CAUSAL_RECONCILED_Q_BEATS_FLAT_BOTH_BELOW_NATIVE`
 - Preparation repository commit: `1e3aa7e300e8b8182211e87ebc121db3a321a596`

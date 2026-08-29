@@ -5,6 +5,7 @@
 - Benchmark role: `public_validation`
 - Capability shape: `dynamic_asset_allocation`
 - Metric: `adjusted_sharpe` (maximize)
+- Original task source: [Hull Tactical Market Prediction](https://www.kaggle.com/competitions/hull-tactical-market-prediction)
 - Primary evidence stage: `public_validation`
 - v0.1 status: `COMPLETE_Q_BEATS_FLAT_BOTH_BELOW_NATIVE`
 - Preparation repository commit: `7f21cc360909927a065c9913f3476d3da8db0fca`

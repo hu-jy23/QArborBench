@@ -44,6 +44,7 @@
         "id": "rmsle",
         "direction": "minimize"
       },
+      "original_source_url": "https://www.kaggle.com/competitions/bike-sharing-demand",
       "data_oos_boundary": "2012-10 through 2012-12",
       "preparation_repo_commit": "87a9e09d50f3aa7559eac7b621334eb924ecd56a",
       "primary_stage": "data_oos",
@@ -60,6 +61,7 @@
         "id": "wmae",
         "direction": "minimize"
       },
+      "original_source_url": "https://www.kaggle.com/competitions/walmart-recruiting-store-sales-forecasting",
       "data_oos_boundary": "2012-10 final four forecast weeks",
       "preparation_repo_commit": "8f1e7fb96c54ce1b491130ab940d07a9276f0b6e",
       "primary_stage": "public_validation",
@@ -76,6 +78,7 @@
         "id": "adjusted_sharpe",
         "direction": "maximize"
       },
+      "original_source_url": "https://www.kaggle.com/competitions/hull-tactical-market-prediction",
       "data_oos_boundary": "date_id 8688 through 9047",
       "preparation_repo_commit": "7f21cc360909927a065c9913f3476d3da8db0fca",
       "primary_stage": "public_validation",
@@ -92,6 +95,7 @@
         "id": "rmsle",
         "direction": "minimize"
       },
+      "original_source_url": "https://www.kaggle.com/competitions/recruit-restaurant-visitor-forecasting",
       "data_oos_boundary": "2017-03-26 through 2017-04-22",
       "preparation_repo_commit": "6a2c011d174fe8d5c802a82f600c9b3eeef85040",
       "primary_stage": "public_validation",
@@ -108,6 +112,7 @@
         "id": "smape",
         "direction": "minimize"
       },
+      "original_source_url": "https://www.kaggle.com/competitions/web-traffic-time-series-forecasting",
       "data_oos_boundary": "final 60 days of frozen 240-day view",
       "preparation_repo_commit": "fcfe1d417cb5d0892358515d348754ae6d86f37e",
       "primary_stage": "sealed_v1",
@@ -124,6 +129,7 @@
         "id": "mae",
         "direction": "minimize"
       },
+      "original_source_url": "https://www.kaggle.com/competitions/optiver-trading-at-the-close",
       "data_oos_boundary": "date_id 461 through 480",
       "preparation_repo_commit": "6049115c6eb4647822868193c79cd4f5607babdb",
       "primary_stage": "sealed_causal_v2",
@@ -140,6 +146,7 @@
         "id": "spread_sharpe",
         "direction": "maximize"
       },
+      "original_source_url": "https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction",
       "data_oos_boundary": "final 60 trading days",
       "preparation_repo_commit": "1e3aa7e300e8b8182211e87ebc121db3a321a596",
       "primary_stage": "public_validation_causal_v2_flat",
