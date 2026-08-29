@@ -28,13 +28,13 @@ QArborBench packages adapters, comparison protocol and accepted evidence around 
 
 ## Coverage map
 
-| Task family | Development | Data-OOS | Public validation | Sealed holdout |
-|---|---|---|---|---|
-| Ranking | — | — | JPX | — |
-| Dynamic allocation | — | — | Hull | — |
-| Market microstructure | — | — | — | Optiver |
-| Demand forecasting | — | Bike | Recruit, Walmart | — |
-| Scale/panel forecasting | — | — | — | Web Traffic |
+| Task family | Data-OOS | Public validation | Sealed holdout |
+|---|---|---|---|
+| Ranking | — | JPX | — |
+| Dynamic allocation | — | Hull | — |
+| Market microstructure | — | — | Optiver |
+| Demand forecasting | Bike | Recruit, Walmart | — |
+| Scale/panel forecasting | — | — | Web Traffic |
 
 ## Agent Harness × Task
 
