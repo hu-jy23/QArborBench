@@ -34,13 +34,13 @@ QArborBench packages adapters, comparison protocol and accepted evidence around 
 - Frozen task-local metrics; heterogeneous raw metrics are never averaged.
 
 <p align="center">
-  <img src="assets/benchmark-portfolio.svg" width="100%" alt="QArborBench tasks organized by quantitative family and evidence regime">
+  <img src="assets/paper-figure-3-benchmark-portfolio.png" width="100%" alt="Figure 3 from the final paper: QArborBench evidence stages and task families">
 </p>
 
 ## Results at a glance
 
 <p align="center">
-  <img src="assets/q-vs-flat-improvement.svg" width="100%" alt="Direction-normalized Q-Arbor improvement over Flat Agent across seven tasks">
+  <img src="assets/paper-table-3-primary-outcomes.png" width="100%" alt="Table 3 from the final paper: Agent Harness by Task primary outcomes">
 </p>
 
 ## Agent Harness × Task
